@@ -1,0 +1,34 @@
+# Default values for mariadb, fastapi, nginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+deployment:
+  mariadb:
+    name: helm-mariadb106-deploy
+    app: helm-mariadb106
+    image: mariadb
+    tags: 10.6.19-focal
+    secret: helm-mariadb-secret
+  fastapi:
+    name: helm-fastapi-deploy
+    app: helm-fastapi
+    image: yoon741/k8s-fastapi
+    tags: v2
+  nginx:
+    name: helm-fanginx-deploy
+    app: helm-fanginx
+    image: dangdang42/k8s-fanginx
+    tags: v3
+
+service:
+  mariadb:
+    app: helm-mariadb106
+  fastapi:
+    app: helm-fastapi
+  nginx:
+    name: helm-fanginx-svc
+    app: helm-fanginx
+
+secret:
+  name: helm-mariadb-secret
