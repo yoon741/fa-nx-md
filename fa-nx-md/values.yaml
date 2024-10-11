@@ -18,8 +18,8 @@ deployment:
   nginx:
     name: helm-fanginx-deploy
     app: helm-fanginx
-    image: dangdang42/k8s-fanginx
-    tags: v3
+    image: yoon741/k8s-fanginx
+    tags: v2
 
 service:
   mariadb:
